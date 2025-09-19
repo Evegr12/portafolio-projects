@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>My To-Do App</h1>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+
+      <!--Sección para agregar tarea-->
+      <section class="task-section">
+        <div class="add-task-container">
+          <input id="taskInput" placeholder="Escribe tu tarea...">
+          <button class="button-agregar" onclick="addTask()">Agregar</button>
+        </div>
+        <ul id="taskList"></ul>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 Mi página web</p>
+    </footer>
+</body>
+</html>
+<script>
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      const task = input.value.trim();
+      if(task) {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${task}</span>
+          <span class="actions">
+            <button onclick="toggleComplete(this)">✔️</button>
+            <button onclick="deleteTask(this)">🗑️</button>
+          </span>
+        `;
+        document.getElementById('taskList').appendChild(li);
+        input.value = '';
+        save(localStorage); // Guardar después de agregar
+      }
+    }
+
+    function save(storage) {
+      const tasks = [];
+      document.querySelectorAll('#taskList li').forEach(li => {
+        tasks.push({
+          text: li.querySelector('span').innerText,
+          completed: li.classList.contains('completed')
+        });
+      });
+      storage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function load(storage) {
+      const tasks = JSON.parse(storage.getItem('tasks') || '[]');
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+      tasks.forEach(task => {
+        const li = document.createElement('li');
+        if(task.completed) li.classList.add('completed');
+        li.innerHTML = `
+          <span>${task.text}</span>
+          <span class="actions">
+            <button onclick="toggleComplete(this)">✔️</button>
+            <button onclick="deleteTask(this)">🗑️</button>
+          </span>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    function toggleComplete(button) {
+      const li = button.closest('li');
+      li.classList.toggle('completed');
+      save(localStorage); // Guardar después de completar
+    }
+
+    //Función para eliminar tarea
+    function deleteTask(button) {
+      const li = button.closest('li');
+      li.remove();
+      save(localStorage); // Guardar después de eliminar
+    }
+
+    // Cargar tareas al iniciar
+    window.onload = function() {
+      load(localStorage);
+    }
+</script>

@@ -1,0 +1,126 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 20px; /* padding para evitar que el contenido toque los bordes */
+}
+
+/* Encabezado */
+header {
+    background-color: #eed8ffb4;
+    color: rgb(158, 158, 158);
+    text-align: center;
+    padding: 1em;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    background-color: #584958;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(216, 214, 214);
+    text-decoration: none;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+}
+
+.task-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-task-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskList {
+    width: 100%;
+    max-width: 400px;
+    background: #f8f4ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #eed8ff55;
+    padding: 16px;
+}
+
+li {
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: #c9b3c955;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 4px #c9b3c955;
+    transition: background 0.2s;
+}
+
+li.completed span:first-child {
+    text-decoration: line-through;
+    color: #b39ddb;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 8px;
+    transition: color 0.2s;
+}
+
+.actions button:hover {
+    color: #8e24aa;
+}
+
+ 
+input { 
+    width: 300px; 
+    padding: 5px 12px;
+    border-radius: 5px;
+    border-color: #c9b3c9;
+    background-color: rgb(237, 232, 255);
+}
+
+.button-agregar {
+    background-color: #584958;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+    
+ul { 
+    list-style: none; 
+    padding: 0; 
+}
+    
+li { 
+    margin: 5px 0; 
+}
+
+/* Pie de página */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1em;
+    margin-top: 20px;
+}
