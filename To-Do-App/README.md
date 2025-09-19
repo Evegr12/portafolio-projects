@@ -28,7 +28,8 @@ Este proyecto es una **aplicación sencilla en HTML, CSS y JavaScript** que perm
 
 
 
-<img width="499" height="600" alt="image" src="https://github.com/user-attachments/assets/0230821e-9db1-432b-8b59-c471cce9eba9" /> 
+<img width="499" height="600" alt="image" src="https://github.com/user-attachments/assets/73662a59-b309-428a-86e3-7f7fab6460e4" />
+
 
 ---
 
