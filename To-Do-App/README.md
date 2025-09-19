@@ -26,9 +26,7 @@ Este proyecto es una **aplicación sencilla en HTML, CSS y JavaScript** que perm
 
 ## 📸 Vista previa
 
-
-
-<img width="499" height="600" alt="image" src="./screenshot.png" />
+![Captura To-Do App](./screenshot.png)
 
 
 ---
