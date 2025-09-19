@@ -28,7 +28,7 @@ Este proyecto es una **aplicación sencilla en HTML, CSS y JavaScript** que perm
 
 
 
-<img width="499" height="600" alt="image" src="screenshot.png" />
+<img width="499" height="600" alt="image" src="./screenshot.png" />
 
 
 ---
