@@ -13,6 +13,7 @@ Este proyecto es una **aplicación sencilla en HTML, CSS y JavaScript** que perm
 - Agregar nuevas tareas.  
 - Ver las tareas en una lista.  
 - (Opcional) Marcar tareas como realizadas.  
+<img width="499" height="600" alt="image" src="https://github.com/user-attachments/assets/0230821e-9db1-432b-8b59-c471cce9eba9" />
 
 ---
 
@@ -26,7 +27,7 @@ Este proyecto es una **aplicación sencilla en HTML, CSS y JavaScript** que perm
 
 ## 📸 Vista previa
 
-![Captura To-Do App](./screenshot.png)
+
 
 *(Puedes tomar una captura de tu navegador y guardarla en la carpeta con ese nombre para que se muestre aquí.)*  
 
