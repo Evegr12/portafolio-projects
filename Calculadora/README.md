@@ -5,7 +5,10 @@ Este proyecto es una **calculadora en Python** que permite realizar las cuatro o
 - ➕ Suma  
 - ➖ Resta  
 - ✖️ Multiplicación  
-- ➗ División  
+- ➗ División
+
+<img width="445" height="153" alt="image" src="https://github.com/user-attachments/assets/e1890cdf-fb6e-4d0b-91d0-c34c01d82cce" />
+
 
 ---
 
@@ -16,4 +19,3 @@ Este proyecto es una **calculadora en Python** que permite realizar las cuatro o
 
 ```bash
 python calculadoraBasica.py
-![alt text](image.png)
