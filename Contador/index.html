@@ -1,0 +1,101 @@
+<hr>
+Ingrese el número donde quiere que inicie el contador: <input type="number" id="inicioContador"><br><br>
+<button class="incrementar">+1</button>
+<button class="restar">-1</button>
+<p>Contador: <span id="count">0</span></p>
+
+<button class="reset">Reset</button>
+<script>
+    // Recupera el contador guardado, si existe
+  let count = Number(localStorage.getItem('contador')) || 0;
+  const input = document.getElementById('inicioContador');
+  const button1 = document.querySelector('.incrementar');
+  const button2 = document.querySelector('.restar');
+  const countDisplay = document.getElementById('count');
+  const reset = document.querySelector('.reset');
+
+  function updateDisplay() {
+    countDisplay.textContent = count;
+    if (count > 10) {
+      countDisplay.style.color = 'green';
+    } else if (count < 0) {
+      countDisplay.style.color = 'red';
+    } else {
+      countDisplay.style.color = 'black';
+    }
+    localStorage.setItem('contador', count); // Guarda el contador
+  }
+
+  //Actualiza el contador al número ingresado
+  input.addEventListener('change', () => {
+    count = Number(input.value) || 0;
+    updateDisplay();
+  })
+
+  button1.addEventListener('click', () => {
+    count++;
+    updateDisplay();
+  });
+
+  button2.addEventListener('click', () => {
+    count--;
+    updateDisplay();
+  });
+
+  reset.addEventListener('click', () => {
+    count = 0;
+    updateDisplay();
+  })
+
+   // Al cargar la página, muestra el valor guardado en el input y contador
+  input.value = count;
+  updateDisplay();
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 18px;
+        width: 100px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        border-color:rgba(187, 110, 8, 0.1) ;
+        border-radius: 5px;
+        box-shadow: 2px 2px 0 rgba(187, 110, 8, 0.1);
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .reset {
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: cadetblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .reset:hover {
+        background-color: rgb(109, 194, 219);
+    }
+
+    p {
+        font-size: 18px;
+    }
+    #count {
+        font-weight: bold;
+    }
+</style>
